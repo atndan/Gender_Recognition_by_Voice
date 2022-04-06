@@ -1,4 +1,4 @@
-# Dataset and description.
+# Gender Recognition by Voice.
 
 Our team project is **Gender Recognition by Voice**,  team will use logistic regression model to identify the gender which is male or female based upon acoustic properties of the voice and speech. The link to the dataset and its description are below. 
 
