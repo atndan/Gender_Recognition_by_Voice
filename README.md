@@ -1,6 +1,6 @@
 # Gender Recognition by Voice.
 
-**Gender Recognition by Voice**,  team will use logistic regression model and randomforest to identify the gender which is male or female based upon acoustic properties of the voice and speech. The link to the dataset and its description are below. 
+**Gender Recognition by Voice**,  using logistic regression and randomforest model to identify the gender which is male or female based upon acoustic properties of the voice and speech. The link to the dataset and its description are below. 
 
 **Link dataset**
 
@@ -56,13 +56,4 @@ There are 21 features, these variables are defined by the acoustic properties:
 
 - label: male or female
 
-
-
-# Team members 
-
-- Aaron Banlao - WU8888
-
-- Dan Hoang - CU2107
-
-- Sadanidan Balamurugan - CB9166
 
