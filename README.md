@@ -1,6 +1,6 @@
 # Gender Recognition by Voice.
 
-**Gender Recognition by Voice**,  using logistic regression and randomforest model to identify the gender which is male or female based upon acoustic properties of the voice and speech. The link to the dataset and its description are below. 
+**Gender Recognition by Voice**,  applying logistic regression and randomforest model to identify the gender which is male or female based upon acoustic properties of the voice and speech. The link to the dataset and its description are below. 
 
 **Link dataset**
 
