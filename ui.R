@@ -17,24 +17,6 @@ shinyUI(fluidPage(
    mainPanel(width = '100%',
    useShinyjs(),
 
-   tags$form(action="https://www.paypal.com/cgi-bin/webscr", method="post", name="m_OrderForm", id="m_OrderForm",
-     tags$input(type="hidden", name="business", value="kbecker@primaryobjects.com"),
-     tags$input(type="hidden", name="item_name", value="Voice Gender App"),
-     tags$input(type="hidden", name="item_number", value="VOICEGENDERAPP"),
-     tags$input(type="hidden", name="amount", value="9.95"),
-     # Set the terms of the regular subscription.
-     tags$input(type="hidden", name="a3", value="9.95"),
-     tags$input(type="hidden", name="p3", value="1"),
-     tags$input(type="hidden", name="t3", value="M"),
-     # Set recurring payments until canceled.
-     tags$input(type="hidden", name="src", value="1"),
-     tags$input(type="hidden", name="no_shipping", value="1"),
-     tags$input(type="hidden", name="return", value="https://primaryobjects.shinyapps.io/voice/?action=register"),
-     tags$input(type="hidden", name="currency_code", value="USD"),
-     tags$input(type="hidden", name="no_note", value="1"),
-     tags$input(type="hidden", name="cancel_return", value="https://primaryobjects.shinyapps.io/voice/?action=cancel"),
-     tags$input(type="hidden", name="cmd", value="_xclick-subscriptions")
-   ),
 
    div(id="register-div",
      div(
@@ -92,21 +74,6 @@ shinyUI(fluidPage(
        tabPanel('Frequency Graph', plotOutput("graph1", width=1000, height=500)),
        tabPanel('Spectrogram', plotOutput("graph2", width=1000, height=500))
      ),
-     div(style='margin: 20px 0 0 0;')
-   ),
-
-   h4('Voice Tips and Tricks'),
-   p('- Pitch, combined with intonation (the rise and fall of the voice in speaking), are important factors in classifying male versus female.'),
-   p('- Male classified voices tend to be low and within a narrow range of pitch (ie., relatively monotone).'),
-   p('- Female classified voices tend to be higher in pitch and fluctuate frequency to a much greater degree.'),
-   p('- Female classified voices often rise in frequency at the end of a sentence, as if asking a question.'),
-   div(style='margin: 20px 0 0 0;'),
-
-   h4('How does it work?'),
-   p('This application uses a method of artificial intelligence, called machine learning, to determine the gender of a voice.'),
-   p('The program was trained on a dataset of 3,168 voice samples, split between male and female voices. By analyzing the acoustic properties of the voices, the program is able to achieve 89% accuracy on the test set.'),
-   p('Interested in learning more? Read the complete ', a(href='http://www.primaryobjects.com/2016/06/22/identifying-the-gender-of-a-voice-using-machine-learning/', target='_blank', 'article')),
-   p('Created by ', a(href='http://www.primaryobjects.com/kory-becker', target='_blank', 'Kory Becker'), br('7/28/2016'),
-   span(style='font-style: italic;', 'Updated 3/29/2022'))
+    
   ))
 ))
