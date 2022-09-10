@@ -1,59 +1,33 @@
-# Gender Recognition by Voice.
+Voice Gender Web App
+====================
 
-**Gender Recognition by Voice**,  applying logistic regression and randomforest model to identify the gender which is male or female based upon acoustic properties of the voice and speech. The link to the dataset and its description are below. 
+This folder contains the code for running the web-based version of the voice-gender data-set.
 
-**Link dataset**
+The program allows users to upload an audio file or provide a url to an audio recording from [Vocaroo](http://vocaroo.com). The audio is analyzed in real-time and a result of male/female is displayed. The web application also provides a frequency graph and Spectrogram for visualizing frequency and pitch.
 
-https://www.kaggle.com/datasets/primaryobjects/voicegender
+The web version is developed with R Shiny.
 
-**Description**
+## Installation
 
-This database was created to identify a voice as male or female, based upon acoustic properties of the voice and speech. The dataset consists of 3,168 recorded voice samples, collected from male and female speakers. The voice samples are pre-processed by acoustic analysis in R using the seewave and tuneR packages, with an analyzed frequency range of 0hz-280hz (human vocal range). 
+1. Install the required Linux libraries with the following command.
+```bash
+sudo apt-get install libcurl4-openssl-dev cmake r-base-core fftw3 fftw3-dev pkg-config
+```
 
-There are 21 features, these variables are defined by the acoustic properties:
+2. If debugging using VSCode, install the [R Debugger](https://github.com/ManuelHentschel/VSCode-R-Debugger) from the Extensions panel.
 
-- meanfreq: mean frequency (in kHz)
+3. In VSCode, click the Debug tool and run **Launch Shiny App**. A new browser should display with the web application running.
 
-- sd: standard deviation of frequency
+## Screenshots
 
-- median: median frequency (in kHz)
+### Results of an analysis
 
-- Q25: first quantile (in kHz)
+> ![Homepage and analysis.](images/screenshot1.png)
 
-- Q75: third quantile (in kHz)
+### Frequency graph
 
-- IQR: interquantile range (in kHz)
+> ![Frequency graph.](images/screenshot2.png)
 
-- skew: skewness (see note in specprop description)
+### Spectrogram
 
-- kurt: kurtosis (see note in specprop description)
-
-- sp.ent: spectral entropy
-
-- sfm: spectral flatness
-
-- mode: mode frequency
-
-- centroid: frequency centroid (see specprop)
-
-- peakf: peak frequency (frequency with highest energy)
-
-- meanfun: average of fundamental frequency measured across acoustic signal
-
-- minfun: minimum fundamental frequency measured across acoustic signal
-
-- maxfun: maximum fundamental frequency measured across acoustic signal
-
-- meandom: average of dominant frequency measured across acoustic signal
-
-- mindom: minimum of dominant frequency measured across acoustic signal
-
-- maxdom: maximum of dominant frequency measured across acoustic signal
-
-- dfrange: range of dominant frequency measured across acoustic signal
-
-- modindx: modulation index. Calculated as the accumulated absolute difference between adjacent measurements of fundamental frequencies divided by the frequency range
-
-- label: male or female
-
-
+> ![Spectrogram.](images/screenshot3.png)
