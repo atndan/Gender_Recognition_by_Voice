@@ -7,7 +7,7 @@
     "shiny",
     "heroku-buildpack-r"
   ],
-  "repository": "https://github.com/virtualstaticvoid/heroku-shiny-app",
+  "repository": "https://github.com/atndan/STAT632_Gender_Recognition_by_Voice/tree/demo1",
   "logo": "https://github.com/virtualstaticvoid/heroku-shiny-app/raw/main/logo.png",
   "success_url": "/",
   "formation": {
