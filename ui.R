@@ -42,7 +42,6 @@ shinyUI(fluidPage(
        tabPanel('Details', div(tableOutput('summary1'), tableOutput('summary2'))),
        tabPanel('Frequency Graph', plotOutput("graph1", width=1000, height=500)),
        tabPanel('Spectrogram', plotOutput("graph2", width=1000, height=500))
-     ),
     
   ))
-))
+))))
