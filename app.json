@@ -1,0 +1,23 @@
+{
+  "name": "heroku-shiny-app",
+  "stack": "heroku-22",
+  "description": "This is an example Shiny application, which uses the heroku-buildpack-r for Heroku.",
+  "keywords": [
+    "r",
+    "shiny",
+    "heroku-buildpack-r"
+  ],
+  "repository": "https://github.com/virtualstaticvoid/heroku-shiny-app",
+  "logo": "https://github.com/virtualstaticvoid/heroku-shiny-app/raw/main/logo.png",
+  "success_url": "/",
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "vsv/heroku-buildpack-r"
+    }
+  ]
+}

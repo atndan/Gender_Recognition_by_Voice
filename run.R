@@ -1,5 +1,3 @@
-# Stub for running within VSCode. Uncomment the following lines to run.
-##update.packages(ask=FALSE, checkBuilt=TRUE)
 library(shiny)
 
 port <- Sys.getenv('PORT')

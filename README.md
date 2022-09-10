@@ -1,33 +1,46 @@
-Voice Gender Web App
-====================
+# Example Shiny App on Heroku
 
-This folder contains the code for running the web-based version of the voice-gender data-set.
+This is an example [Shiny][shiny] application, which uses the [heroku-buildpack-r][buildpack] on Heroku.
 
-The program allows users to upload an audio file or provide a url to an audio recording from [Vocaroo](http://vocaroo.com). The audio is analyzed in real-time and a result of male/female is displayed. The web application also provides a frequency graph and Spectrogram for visualizing frequency and pitch.
+> Shiny is an R package that makes it easy to build interactive web apps straight from R. You can host
+> standalone apps on a webpage or embed them in R Markdown documents or build dashboards. You can also
+> extend your Shiny apps with CSS themes, htmlwidgets, and JavaScript actions.
 
-The web version is developed with R Shiny.
+## Usage
 
-## Installation
+[![Deploy][button]][deployapp]
 
-1. Install the required Linux libraries with the following command.
+You can use this project as a template for creating Shiny applications on Heroku.
+
+Execute these commands to get started:
+
 ```bash
-sudo apt-get install libcurl4-openssl-dev cmake r-base-core fftw3 fftw3-dev pkg-config
+# get the sources
+git clone https://github.com/virtualstaticvoid/heroku-shiny-app.git
+cd heroku-shiny-app
+
+# optionally, reinitialize git
+rm -rf .git
+git init -b main
+git add --all
+git commit -m "initial"
+
+# create a new heroku application, set the buildpack and deploy
+heroku create --stack heroku-20 --buildpack vsv/heroku-buildpack-r
+
+# deploy
+git push heroku main
+
+# view the application
+heroku open
 ```
 
-2. If debugging using VSCode, install the [R Debugger](https://github.com/ManuelHentschel/VSCode-R-Debugger) from the Extensions panel.
+## License
 
-3. In VSCode, click the Debug tool and run **Launch Shiny App**. A new browser should display with the web application running.
+MIT License. Copyright (c) 2017 Chris Stefano. See [LICENSE](LICENSE) for details.
 
-## Screenshots
-
-### Results of an analysis
-
-> ![Homepage and analysis.](images/screenshot1.png)
-
-### Frequency graph
-
-> ![Frequency graph.](images/screenshot2.png)
-
-### Spectrogram
-
-> ![Spectrogram.](images/screenshot3.png)
+<!-- Links -->
+[buildpack]: https://github.com/virtualstaticvoid/heroku-buildpack-r
+[button]: https://www.herokucdn.com/deploy/button.svg
+[deployapp]: https://heroku.com/deploy?template=https://github.com/virtualstaticvoid/heroku-shiny-app/tree/main
+[shiny]: https://shiny.rstudio.com/
