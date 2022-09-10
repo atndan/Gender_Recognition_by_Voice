@@ -18,37 +18,6 @@ shinyUI(fluidPage(
    useShinyjs(),
 
 
-   div(id="register-div",
-     div(
-       div(style="float: left;",
-         p(class="intro-text",
-           "Subscribe to the Voice Gender App today!"
-         )
-       ),
-       div(id="info",
-         tags$i(class="fa fa-info-circle", style="float: left; margin: 2px 0 0 6px;", "data-toggle"="tooltip", "data-placement"="bottom", title="This app uses a method of artificial intelligence, called machine learning, to determine the gender of a voice. Subscribed users of the Voice Gender App receive an app license, priority email support, and priority suggestions for new features.")
-       )
-     ),
-     div(style="clear: both;"),
-
-     div(id="license-div",
-       div(style="float: left",
-         tags$select(id="lstLicense", class="form-control",
-           tags$option(value="Starter", "Starter License $9.95/mo"),
-           tags$option(value="Personal", selected="true", "Personal License $14.95/mo"),
-           tags$option(value="Professional", "Professional License $29.95/mo"),
-           tags$option(value="Gold", "Gold License $99.95/mo")
-         )
-       ),
-       div(
-         a(href="#", class="btn btn-primary btn-lg submit buy",
-           tags$i(class="fa fa-unlock-alt"),
-           "Buy Now"
-         )
-       )
-     )
-   ),
-
    h4(id='main', 'Upload a wav/mp3 file of your voice or enter a url from ', a(href='http://vocaroo.com', target='_blank', 'vocaroo.com'), ' to detect its gender.'),
    div(style='margin: 20px 0 0 0;'),
 
