@@ -1,8 +1,8 @@
-## Including the required R packages.
-#packages <- c('shiny', 'shinyjs')
-#if (length(setdiff(packages, rownames(installed.packages()))) > 0) {
-#  install.packages(setdiff(packages, rownames(installed.packages())))
-#}
+# Including the required R packages.
+packages <- c('shiny', 'shinyjs')
+if (length(setdiff(packages, rownames(installed.packages()))) > 0) {
+ install.packages(setdiff(packages, rownames(installed.packages())))
+}
 
 library(shiny)
 library(shinyjs)
