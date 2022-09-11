@@ -465,10 +465,6 @@ formatResult <- function(result) {
   }
   html <- paste0('Gender: <span style="font-weight: bold;">', colorize(result$content1$label), '</span> <span class="average-pitch"><i class="fa fa-headphones" aria-hidden="true" title="Average Pitch" style="color: ', pitchColor, '"></i>', result$freq$meanf, ' hz</span><hr>')
 
-  html <- paste0(html, '<div class="detail-summary">')
-  html <- paste0(html, '<div class="detail-header">Details</div>')
-  html <- paste0(html, 'Gender:  ', colorize(result$content1$label), '<i class="fa fa-info" aria-hidden="true" title="Support Vector Machine (SVM), Threshold value: ', round(result$content1$prob * 100), '%"></i>  ')
-  html <- paste0(html, '</div>')
 
   html
 }
