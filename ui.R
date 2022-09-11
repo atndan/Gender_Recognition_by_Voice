@@ -5,7 +5,6 @@ if (length(setdiff(packages, rownames(installed.packages()))) > 0) {
 }
 
 library(shinythemes)
-
 library(shiny)
 library(shinyjs)
 

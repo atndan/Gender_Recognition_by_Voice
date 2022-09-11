@@ -2,10 +2,13 @@
 ##update.packages(ask=FALSE, checkBuilt=TRUE)
 library(shiny)
 
-port <- Sys.getenv('PORT')
-
-shiny::runApp(
+runApp(
   appDir = getwd(),
-  host = '0.0.0.0',
-  port = as.numeric(port)
+  port = getOption("shiny.port"),
+  launch.browser = getOption("shiny.launch.browser", interactive()),
+  host = getOption("shiny.host", "127.0.0.1"),
+  workerId = "",
+  quiet = FALSE,
+  display.mode = c("auto", "normal", "showcase"),
+  test.mode = getOption("shiny.testmode", FALSE)
 )
