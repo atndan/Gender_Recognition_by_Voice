@@ -4,7 +4,7 @@ install.packages(setdiff(packages, rownames(installed.packages())))
 }
 
 #In Linux, also required:
-sudo apt-get install libcurl4-openssl-dev cmake r-base-core fftw3 fftw3-dev pkg-config
+# sudo apt-get install libcurl4-openssl-dev cmake r-base-core fftw3 fftw3-dev pkg-config
 
 library(shiny)
 library(shinyjs)
