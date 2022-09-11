@@ -18,7 +18,7 @@ shinyUI(fluidPage(
    useShinyjs(),
 
 
-   h4(id='main', 'Upload a wav/mp3 file of your voice or enter a url from ', a(href='http://vocaroo.com', target='_blank', 'vocaroo.com'), ' to detect its gender.'),
+   h4(id='main', 'Upload a wav/mp3 file of your voice or record your voice through here ', a(href='http://vocaroo.com', target='_blank', 'vocaroo.com'), 'then paste the URL to here.'),
    div(style='margin: 20px 0 0 0;'),
 
    inputPanel(
@@ -30,7 +30,7 @@ shinyUI(fluidPage(
          textInput('url', NULL, width = '100%'),
          actionButton('btnUrl', 'Load Url', class='btn-primary', icon=icon('cloud'))
      ),
-     div('Please be patient after uploading or clicking submit.')
+     div('Loading.')
    ),
 
    div(style='margin: 20px 0 0 0;'),
