@@ -18,7 +18,7 @@ shinyUI(fluidPage(
    useShinyjs(),
 
 
-   h4(id='main', 'Upload a wav/mp3 file of your voice or record your voice through here ', a(href='http://vocaroo.com', target='_blank', 'vocaroo.com'), 'then paste the URL to here.'),
+   h4(id='main', 'Upload a wav/mp3 file or record your voice through here ', a(href='http://vocaroo.com', target='_blank', 'vocaroo.com'), 'then paste the URL to here.'),
    div(style='margin: 20px 0 0 0;'),
 
    inputPanel(
