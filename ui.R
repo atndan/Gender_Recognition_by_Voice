@@ -35,11 +35,22 @@ shinyUI(fluidPage( theme = shinytheme("superhero"),
    conditionalPanel(condition='output.content != null && output.content.indexOf("Please enter") == -1',
      tabsetPanel(id='graphs',
        tabPanel('Frequency Graph', plotOutput("graph1", width=1000, height=500)),
-       tabPanel('Spectrogram', plotOutput("graph2", width=1000, height=500))
+       tabPanel('Spectrogram', plotOutput("graph2", width=1000, height=500)),
+      div(style='margin: 30px 0 0 0;'), ),
+      p(style="text-align: center;", 'Check details on ',  a(href='https://github.com/atndan/Gender_Recognition_by_Voice/', target='_blank', 'Github code file' )),
+    ),
    
-    )),
    div(style='margin: 20px 0 0 0;'),   
    conditionalPanel(condition='output.content == null',
-    mainPanel(tags$img(src="https://media.istockphoto.com/vectors/sound-wave-vector-id853281756?k=20&m=853281756&s=612x612&w=0&h=QCRxdD0jdshJGGk60CMY_qdIYTsO5Zc9RVS2dMYywa8=", height = "350px", width = "800px", align= "center" ))
-   )
-))))
+    mainPanel(img(src="https://media.istockphoto.com/vectors/sound-wave-vector-id853281756?k=20&m=853281756&s=612x612&w=0&h=QCRxdD0jdshJGGk60CMY_qdIYTsO5Zc9RVS2dMYywa8=", height = "350px", width = "800px", align= "center" ),
+              div(style='margin: 30px 0 0 0;'),
+              p(style="text-align: center;", 'Check details on ',  a(href='https://github.com/atndan/Gender_Recognition_by_Voice/', target='_blank', 'Github code file' ))),
+    
+  
+   ),
+   
+   
+
+
+   ))
+))
