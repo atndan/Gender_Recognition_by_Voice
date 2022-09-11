@@ -1,13 +1,15 @@
 # Including the required R packages.
-packages <- c('shiny', 'shinyjs')
+packages <- c('shiny', 'shinyjs', 'shinythemes')
 if (length(setdiff(packages, rownames(installed.packages()))) > 0) {
  install.packages(setdiff(packages, rownames(installed.packages())))
 }
 
+library(shinythemes)
+
 library(shiny)
 library(shinyjs)
 
-shinyUI(fluidPage(
+shinyUI(fluidPage( theme = shinytheme("superhero"),
   conditionalPanel(condition='!output.json',
                    tags$head(tags$script(src = "script.js"),
                    			 tags$script(src = "google-analytics.js"),
@@ -18,20 +20,12 @@ shinyUI(fluidPage(
    useShinyjs(),
 
 
-   h4(id='main', 'Upload a wav/mp3 file or record your voice through here ', a(href='http://vocaroo.com', target='_blank', 'vocaroo.com'), 'then paste the URL to here.'),
-   div(style='margin: 20px 0 0 0;'),
+   h4(id='main', 'Upload a wav/mp3 file '),
+   div(style='margin: 30px 0 0 0;'),
 
    inputPanel(
-     div(id='uploadDiv', class='', style='height: 120px; border-right: 1px solid #ccc;',
-         fileInput('file1', 'Upload wav or mp3 File', accept = c('audio/wav', 'audio/mp3'), width = '100%')
-     ),
-     div(id='urlDiv', class='',
-         strong('Vocaroo Url:'),
-         textInput('url', NULL, width = '100%'),
-         actionButton('btnUrl', 'Load Url', class='btn-primary', icon=icon('cloud'))
-     ),
-     div('Loading.')
-   ),
+     div(id='uploadDiv', style='height: 100px',
+         fileInput('file1', 'Upload wav or mp3 File', accept = c('audio/wav', 'audio/mp3'), width = '100%'))),
 
    div(style='margin: 20px 0 0 0;'),
    div(id='result', style='font-size: 22px;', htmlOutput('content')),
@@ -39,7 +33,6 @@ shinyUI(fluidPage(
 
    conditionalPanel(condition='output.content != null && output.content.indexOf("Please enter") == -1',
      tabsetPanel(id='graphs',
-       tabPanel('Details', div(tableOutput('summary1'), tableOutput('summary2'))),
        tabPanel('Frequency Graph', plotOutput("graph1", width=1000, height=500)),
        tabPanel('Spectrogram', plotOutput("graph2", width=1000, height=500))
     
