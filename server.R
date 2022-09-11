@@ -3,8 +3,8 @@ if (length(setdiff(packages, rownames(installed.packages()))) > 0) {
 install.packages(setdiff(packages, rownames(installed.packages())))
 }
 
-In Linux, also required:
-sudo apt-get install libcurl4-openssl-dev cmake r-base-core fftw3 fftw3-dev pkg-config
+#In Linux, also required:
+# sudo apt-get install libcurl4-openssl-dev cmake r-base-core fftw3 fftw3-dev pkg-config
 
 library(shiny)
 library(shinyjs)
@@ -359,15 +359,6 @@ process <- function(path) {
   tryCatch({
     incProgress(0.3, message = 'Processing voice ..')
     content1 <- gender(path, 1)
-    incProgress(0.4, message = 'Analyzing voice 1/4 ..')
-    content2 <- gender(path, 2, content1)
-    incProgress(0.5, message = 'Analyzing voice 2/4 ..')
-    content3 <- gender(path, 3, content1)
-    incProgress(0.6, message = 'Analyzing voice 3/4 ..')
-    content4 <- gender(path, 4, content1)
-    incProgress(0.7, message = 'Analyzing voice 4/4 ..')
-    content5 <- gender(path, 5, content1)
-
     incProgress(0.8, message = 'Building graph 2/2 ..')
 
     wl <- 2048
@@ -468,20 +459,12 @@ colorize <- function(tag) {
 }
 
 formatResult <- function(result) {
-  pitchColor <- '#aa00aa;'
+  pitchColor <- '#EED9FE;'
   if (result$content5$label == 'male') {
-    pitchColor <- '#0000ff'
+    pitchColor <- '#A3D9FD'
   }
-  html <- paste0('Overall Result: <span style="font-weight: bold;">', colorize(result$content5$label), '</span> <span class="average-pitch"><i class="fa fa-headphones" aria-hidden="true" title="Average Pitch" style="color: ', pitchColor, '"></i>', result$freq$meanf, ' hz</span><hr>')
+  html <- paste0('Gender: <span style="font-weight: bold;">', colorize(result$content1$label), '</span> <span class="average-pitch"><i class="fa fa-headphones" aria-hidden="true" title="Average Pitch" style="color: ', pitchColor, '"></i>', result$freq$meanf, ' hz</span><hr>')
 
-  html <- paste0(html, '<div class="detail-summary">')
-  html <- paste0(html, '<div class="detail-header">Details</div>')
-  html <- paste0(html, 'Model 1: ', colorize(result$content1$label), '<i class="fa fa-info" aria-hidden="true" title="Support Vector Machine (SVM), Threshold value: ', round(result$content1$prob * 100), '%"></i>,  ')
-  html <- paste0(html, 'Model 2: ', colorize(result$content2$label), '<i class="fa fa-info" aria-hidden="true" title="XGBoost Small, Threshold value: ', round(result$content2$prob * 100), '%"></i>,  ')
-  html <- paste0(html, 'Model 3: ', colorize(result$content3$label), '<i class="fa fa-info" aria-hidden="true" title="Tuned Random Forest, Threshold value: ', round(result$content3$prob * 100), '%"></i>,  ')
-  html <- paste0(html, 'Model 4: ', colorize(result$content4$label), '<i class="fa fa-info" aria-hidden="true" title="XGBoost Large, Threshold value: ', round(result$content4$prob * 100), '%"></i>,  ')
-  html <- paste0(html, 'Model 5: ', colorize(result$content5$label), '<i class="fa fa-info" aria-hidden="true" title="Stacked, Threshold value: ', round(result$content5$prob * 100), '%"></i>')
-  html <- paste0(html, '</div>')
 
   html
 }

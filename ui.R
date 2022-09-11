@@ -1,13 +1,15 @@
 # Including the required R packages.
-packages <- c('shiny', 'shinyjs')
+packages <- c('shiny', 'shinyjs', 'shinythemes', 'png')
 if (length(setdiff(packages, rownames(installed.packages()))) > 0) {
  install.packages(setdiff(packages, rownames(installed.packages())))
 }
 
+library(shinythemes)
 library(shiny)
 library(shinyjs)
+library(png)
 
-shinyUI(fluidPage(
+shinyUI(fluidPage( theme = shinytheme("superhero"),
   conditionalPanel(condition='!output.json',
                    tags$head(tags$script(src = "script.js"),
                    			 tags$script(src = "google-analytics.js"),
@@ -17,31 +19,27 @@ shinyUI(fluidPage(
    mainPanel(width = '100%',
    useShinyjs(),
 
-
-   h4(id='main', 'Upload a wav/mp3 file of your voice or enter a url from ', a(href='http://vocaroo.com', target='_blank', 'vocaroo.com'), ' to detect its gender.'),
    div(style='margin: 20px 0 0 0;'),
+   h4(id='main', 'Upload a wav or mp3 file     (or record your voice at ', a(href='http://vocaroo.com', target='_blank', 'vocaroo.com'), 'then upload the file)'),
+   div(style='margin: 30px 0 0 0;'),
+   
 
    inputPanel(
-     div(id='uploadDiv', class='', style='height: 120px; border-right: 1px solid #ccc;',
-         fileInput('file1', 'Upload wav or mp3 File', accept = c('audio/wav', 'audio/mp3'), width = '100%')
-     ),
-     div(id='urlDiv', class='',
-         strong('Vocaroo Url:'),
-         textInput('url', NULL, width = '100%'),
-         actionButton('btnUrl', 'Load Url', class='btn-primary', icon=icon('cloud'))
-     ),
-     div('Please be patient after uploading or clicking submit.')
-   ),
+     div(id='uploadDiv', style='height: 100px',
+         fileInput('file1', 'Upload wav or mp3 File', accept = c('audio/wav', 'audio/mp3'), width = '100%'))),
 
    div(style='margin: 20px 0 0 0;'),
    div(id='result', style='font-size: 22px;', htmlOutput('content')),
-   div(style='margin: 20px 0 0 0;'),
+   
 
    conditionalPanel(condition='output.content != null && output.content.indexOf("Please enter") == -1',
      tabsetPanel(id='graphs',
-       tabPanel('Details', div(tableOutput('summary1'), tableOutput('summary2'))),
        tabPanel('Frequency Graph', plotOutput("graph1", width=1000, height=500)),
        tabPanel('Spectrogram', plotOutput("graph2", width=1000, height=500))
-    
-  ))
+   
+    )),
+   div(style='margin: 20px 0 0 0;'),   
+   conditionalPanel(condition='output.content == null',
+    mainPanel(tags$img(src="https://media.istockphoto.com/vectors/sound-wave-vector-id853281756?k=20&m=853281756&s=612x612&w=0&h=QCRxdD0jdshJGGk60CMY_qdIYTsO5Zc9RVS2dMYywa8=", height = "350px", width = "800px", align= "center" ))
+   )
 ))))

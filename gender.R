@@ -1,7 +1,7 @@
-#packages <- c('tuneR', 'seewave', 'gbm')
-#if (length(setdiff(packages, rownames(installed.packages()))) > 0) {
-#  install.packages(setdiff(packages, rownames(installed.packages())))  
-#}
+packages <- c('tuneR', 'seewave', 'gbm')
+if (length(setdiff(packages, rownames(installed.packages()))) > 0) {
+ install.packages(setdiff(packages, rownames(installed.packages())))
+}
 
 library(tuneR)
 library(seewave)

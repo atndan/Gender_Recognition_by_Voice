@@ -161,6 +161,7 @@ addmargins(confusion_matrix)
 library(randomForest)
 library(rpart)
 library(vip)
+library(nnet)
 
 voices_train$label1 <- as.factor(voices_train$label1)
 voices_test$label1 <- as.factor(voices_test$label1)
@@ -168,8 +169,9 @@ voices_test$label1 <- as.factor(voices_test$label1)
 rf_model <- randomForest(label1 ~ ., data = voices_train, importance = TRUE)
 vip(rf_model, num_features = 21, geom = "point", include_type = TRUE)
 ```
+
 ```{r}
-rf_model
+saveRDS(rf_model, "RandomForestmodel.rds")
 ```
 
 
