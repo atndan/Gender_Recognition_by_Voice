@@ -1,6 +1,6 @@
 ## Gender Recognition by Voice and Speech Analysis
 
-Analyze facial expressions into 8 main emotions: happy, surprise, neutral, angry, disgusted, sad, fearful, and contempt.
+Model identify a voice as male or female, based upon acoustic properties of the voice and speech. Test on 3 different ML models, the highest model achieves 98% accuracy.
 
 An end-to-end product ML, deploying the model to the web app using RShiny.
 
@@ -10,7 +10,8 @@ Live demo
 https://danhoang.shinyapps.io/voice-gender/
 
 
-<img width="1122" alt="image" src="https://user-images.githubusercontent.com/91353356/195219599-6e32bd4d-9eef-4b66-a659-02ba516f53b5.png">
+https://user-images.githubusercontent.com/91353356/195220699-a1717f58-a5bc-49cb-bccc-b3b5ec906b3d.mov
+
 
 
 ## Dataset
