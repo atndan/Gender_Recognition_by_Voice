@@ -6,7 +6,11 @@ An end-to-end product ML, deploying the model to the web app using RShiny.
 
 ## Demo 
 
+Live demo
 https://danhoang.shinyapps.io/voice-gender/
+
+
+<img width="1122" alt="image" src="https://user-images.githubusercontent.com/91353356/195219599-6e32bd4d-9eef-4b66-a659-02ba516f53b5.png">
 
 
 ## Dataset
