@@ -1,6 +1,6 @@
 ## Gender Recognition by Voice and Speech Analysis
 
-Model identify a voice as male or female, based upon acoustic properties of the voice and speech. Test on 3 different ML models, the highest model achieves 98% accuracy.
+Identify a voice as male or female, based upon acoustic properties of the voice and speech. Test on 3 different ML models, the highest model achieves 98% accuracy.
 
 An end-to-end product ML, deploying the model to the web app using RShiny.
 
